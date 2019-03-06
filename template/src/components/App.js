@@ -1,7 +1,12 @@
 import React from 'react';
+import Container from './Container/Container';
 
 const App = () => {
-    return <p>Start working here!</p>
+    return (
+        <div>
+            <Container />
+        </div>
+    )
 };
 
 export default App;
