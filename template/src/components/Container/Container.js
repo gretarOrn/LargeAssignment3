@@ -1,25 +1,34 @@
 import React from 'react';
+import bubbleService from '../../services/bubbleService';
+import { BubbleProvider } from '../../context/BubbleContext';
+import ListView from '../ListView/ListView';
 
 class Container extends React.Component {
     componentDidMount() {
-        var products = getProducts();
-        this.setState({
-            products: products
-        });
+        bubbleService.getAllBubbles().then(data => this.setState({ products: {
+            ...this.state.products,
+            list: data
+        }}));
     }
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            products: []
+            products: {
+                list:[]
+            }
         };
     }
     render() {
-        return(
-            <div className="container">
-
-            </div>
+        console.log(this.state.products);
+        return (
+            <BubbleProvider value ={ this.state.products}>
+                <div className="container">
+                    <h1>Our bubble products</h1>
+                    <ListView />
+                </div>
+            </BubbleProvider>
         )
-    };
+    }
 };
 
 export default Container;
