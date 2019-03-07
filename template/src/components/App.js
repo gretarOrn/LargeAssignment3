@@ -6,6 +6,7 @@ import BubbleView from './BubbleView/BubbleView';
 import BubbleDetail from './BubbleDetail/BubbleDetail';
 import bubbleService from '../services/bubbleService';
 import { BubbleProvider } from '../context/BubbleContext';
+import Cart from './Cart/Cart';
 
 
 class App extends React.Component {
@@ -34,6 +35,7 @@ class App extends React.Component {
                             <Route exact path="/bubbles" render={ () => <Redirect to="/" /> } />
                             <Route exact path="/about" component={ About }/>
                             <Route exact path="/bubbles/:bubbleId" component={ BubbleDetail }/>
+                            <Route exact path="/cart" component={ Cart }/>
                             <Route path="*" render={() => <div>404 Not found</div>} />
                         </Switch>
                     </div>
