@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import BubbleDetail from '../BubbleDetail/BubbleDetail';
 import Bubbles from '../Bubbles/Bubbles';
 import { BundleConsumer } from '../../context/BundleContext';
 import { BubbleConsumer } from '../../context/BubbleContext';
@@ -10,14 +11,17 @@ const Bundles = props => {
         <BundleConsumer>
             {
                 BundleContext => {
+                    var bundleBubbles = [];
+                    for(var i = 0; i < items.length; i++){
+                        bundleBubbles.push(<div key={i}>{<BubbleDetail bubbleId={items[i]}/>}</div>);
+                    }
                     return (
                         <div className="card text-black bg-secondary mb-3">
                             <div className="card-header">{ name }</div>
+                            {bundleBubbles}
                         </div>
                     );
-                    
                 }
-                
             }
         </BundleConsumer>
         
