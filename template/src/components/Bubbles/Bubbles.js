@@ -21,7 +21,7 @@ class Bubbles extends React.Component {
     render() {
         console.log(this.state.products);
         return (
-            <BubbleProvider value ={ this.state.products}>
+            <BubbleProvider value ={this.state.products}>
                 <div className="container">
                     <h1>Our bubble products!</h1>
                     <ListView />
