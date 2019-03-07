@@ -3,7 +3,7 @@ import NavLinks from '../NavLinks/NavLinks';
 
 const NavigationBar = () => {
     return (
-        <nav className="navigation-bar">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <NavLinks />
         </nav>
     )

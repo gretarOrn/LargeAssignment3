@@ -1,26 +1,20 @@
-import React from 'react';
+import React from "react";
 import bubbleService from '../../services/bubbleService';
-import { BubbleProvider } from '../../context/BubbleContext';
-import BubbleDetailView from '../BubbleDetailView/BubbleDetailView';
 
 class BubbleDetail extends React.Component {
-    componentDidMount(){
-        bubbleService.getSingleBubble(1).then(data => this.setState({ product: data }));
+    componentDidMount() {
+        bubbleService.getSingleBubble(this.props.match.params.bubbleId).then(data => this.setState({bubbleItem: data}));
     }
-    constructor(props) {
-        super(props);
+    constructor(){
+        super();
         this.state = {
-            product: {}
+            bubbleItem: {}
         };
     }
-    render(){
+    render() {
         return (
-            <BubbleProvider value = {this.state.product}>
-                <div className="container">
-                    <BubbleDetailView />
-                </div>
-            </BubbleProvider>
-        )
+            <div><p>{this.state.bubbleItem.name}</p></div>
+        );
     }
 };
 

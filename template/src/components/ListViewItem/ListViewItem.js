@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 //import { BubbleConsumer } from '../../context/BubbleContext';
 
 const ListViewItem = (props) => {
-    const { name, image, price } = props;
+    const {id, name, image, price } = props;
     return (
         <div className="card text-black bg-secondary mb-3">
             <div className="card-header">{ name }</div>
