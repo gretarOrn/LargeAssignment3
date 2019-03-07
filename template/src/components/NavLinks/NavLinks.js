@@ -5,11 +5,11 @@ import { NavLink } from 'react-router-dom';
 const NavLinks = () => {
     return (
         <ul className="navbar-nav mr-auto">
-            <li className="nav-item"><NavLink to="/bubbles" className="nav-link">Products</NavLink></li>
-            <li><a href="#">Bundles</a></li>
-            <li className="nav-item"><NavLink to="/about" className="nav-link">About us</NavLink></li>
-            <li className="nav-item"><NavLink to="/cart" className="nav-link">Cart</NavLink></li>
-            <li className="nav-item"><NavLink to="/bubbles" className="nav-link"><img src="../../../resources/bubbles.jpg" alt="bubbles"></img></NavLink> </li>
+            <li className="nav-item nav-link"><NavLink to="/" className="nav-link"><img src="../../../resources/bubbles.jpg" alt="bubbles"></img></NavLink> </li>
+            <li className="nav-item nav-link"><NavLink to="/bubbles">Products</NavLink></li>
+            <li className="nav-item nav-link"><NavLink to="/bundles">Bundles</NavLink></li>
+            <li className="nav-item nav-link"><NavLink to="/about">About us</NavLink></li>
+            <li className="nav-item nav-link"><NavLink to="/cart">Cart</NavLink></li>
         </ul>
     );
 };

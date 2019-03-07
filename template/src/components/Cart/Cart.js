@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Cart extends React.Component {
     componentDidMount() {
@@ -14,7 +15,9 @@ class Cart extends React.Component {
     render() {
         return (
             <div>
-                {this.state.bubbleItem.name}
+                <h1>Items in Cart: </h1>
+                <p>{this.state.bubbleItem.name}</p>
+                <button type="button"><Link to="/checkout">orderNow</Link></button>
             </div>
         )
     };
